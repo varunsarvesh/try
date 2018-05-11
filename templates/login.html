@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Login </title>
+</head>
+<body>
+	{% with msg=get_flashed_messages() %}
+		{% if msg %}
+			{{ msg[0] }}
+		{% endif %}
+	{% endwith %}
+	<form action="{{url_for('logged')}}" method="post">
+		Enter your username <input type="text" name="id"><br><br>
+		Enter your password <input type="password" name="pass"><br><br>
+		<input type="submit" value="Login">
+	</form>
+
+	<br><a href="{{url_for('signup')}}"> To signup </a>
+</body>
+</html>
+
+
+

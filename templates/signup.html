@@ -1,0 +1,18 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sign up</title>
+</head>
+<body>
+{% with msg=get_flashed_messages() %}
+		{% if msg %}
+			{{ msg[0] }}
+		{% endif %}
+{% endwith %}
+<form action="{{url_for('signed')}}" method="POST">
+    Enter your name <input type="text" name="name"><br><br>
+    Enter your password <input type="text" name="pass"><br><br>
+    Enter your email <input type="text" name="email"><br><br>
+    <input type="submit" value="sign up">
+</body>
+</html>
